@@ -31,21 +31,28 @@ def validate_name(input_name):
         raise ValueError("Please don't write numbers in your name!")
 
 
-def valid_email(input_email):  
+def valid_email(input_email):
     """
-    Validate user email address 
+    Validate user email address
     using email_validator external library
-    """  
+    """
     if not input_email:
         raise ValueError("Email Address input cannot be empty.")
     if not validate_email(input_email):
         raise EmailNotValidError
 
 
-# function to get user input
+def validate_gender(input_gender):
+    if not input_gender:
+        raise ValueError("Gender input cannot be empty.")
+    if input_gender not in ['F', 'M']:
+        message = "Please choose between: F - Female / M - Male."
+        raise ValueError("Invalid gender provided. " + message)
+
+
 def user_input():
     """
-    Get user inputs 
+    Get user inputs
     """
     print("\nPlease provide some information which helps calculate your BMI")
 
@@ -58,25 +65,25 @@ def user_input():
             valid_email(email)
 
             gender = input("Please type your gender (F/M):\n")
-            print(gender)
+            validate_gender(gender)
 
-            weight = float(input("Please type your weight in kg:\n"))
+            weight = float(input("Please type in your weight in kg:\n"))
             print(weight)
 
-            height = float(input("Please provide your height in cm:\n"))
+            height = float(input("Please type in your height in cm:\n"))
             print(height)
 
-            dob = input("Enter you date of birth in format dd/mm/yyyy:\n")
+            dob = input("Enter your date of birth in format dd/mm/yyyy:\n")
             print(dob)
 
             break
 
         except ValueError as e:
             print(f'Oops, something wnet wrong! '
-                  f'Validation error: {e}. '
-                  f'Try again...')
+                  f'\nValidation error: {e}. '
+                  f'\nTry again...\n')
 
     return name, email, gender, weight, height, dob
-    
+
 
 user_input()
