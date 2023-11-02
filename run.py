@@ -1,12 +1,23 @@
 import re
+from email_validator import validate_email, EmailNotValidError
 
 
 def has_numbers(name):
+    """
+    Check if user name contains any digit
+    """
+    # for char in name:
+    #     if char.isdigit():
+    #         return True
+    # return False
     return any(char.isdigit() for char in name)
 
 
 # create a function to validate user name
 def validate_name(input_name):
+    """
+    Validate user name using regex and has_number method
+    """
     if not input_name:
         raise ValueError("Name cannot be empty!")
     if len(input_name) < 2:
@@ -20,9 +31,23 @@ def validate_name(input_name):
         raise ValueError("Please don't write numbers in your name!")
 
 
+def valid_email(input_email):  
+    """
+    Validate user email address 
+    using email_validator external library
+    """  
+    if not input_email:
+        raise ValueError("Email Address input cannot be empty.")
+    if not validate_email(input_email):
+        raise EmailNotValidError
+
+
 # function to get user input
 def user_input():
-    print("Please provide some information which helps calculate your BMI")
+    """
+    Get user inputs 
+    """
+    print("\nPlease provide some information which helps calculate your BMI")
 
     while True:
         try:
@@ -30,7 +55,7 @@ def user_input():
             validate_name(name)
 
             email = input("Please write your email:\n")
-            print(email)
+            valid_email(email)
 
             gender = input("Please type your gender (F/M):\n")
             print(gender)
@@ -47,8 +72,11 @@ def user_input():
             break
 
         except ValueError as e:
-            print(f'Oops, something wnet wrong!'
-                  f'Validation error: {e}.'
+            print(f'Oops, something wnet wrong! '
+                  f'Validation error: {e}. '
                   f'Try again...')
 
-    return name, email, gender, weight, height, dob        
+    return name, email, gender, weight, height, dob
+    
+
+user_input()
