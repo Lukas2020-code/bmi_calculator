@@ -4,7 +4,7 @@ from email_validator import validate_email, EmailNotValidError
 
 def has_numbers(name):
     """
-    Check if user name contains any digit
+    Check if user's name contains any digit
     """
     # for char in name:
     #     if char.isdigit():
@@ -16,7 +16,7 @@ def has_numbers(name):
 # create a function to validate user name
 def validate_name(input_name):
     """
-    Validate user name using regex and has_number method
+    Validate user's name using regex and has_number method
     """
     if not input_name:
         raise ValueError("Name cannot be empty!")
@@ -33,7 +33,7 @@ def validate_name(input_name):
 
 def valid_email(input_email):
     """
-    Validate user email address
+    Validate user's email address
     using email_validator external library
     """
     if not input_email:
@@ -43,11 +43,36 @@ def valid_email(input_email):
 
 
 def validate_gender(input_gender):
+    """
+    Validate user's gender
+    """
     if not input_gender:
         raise ValueError("Gender input cannot be empty.")
     if input_gender not in ['F', 'M']:
         message = "Please choose between: F - Female / M - Male."
         raise ValueError("Invalid gender provided. " + message)
+
+
+def validate_weight(input_weight):
+    """
+    Validate the user's weight to calculate BMI
+    """
+    if not input_weight:
+        raise ValueError("Weight input cannot be empty")
+    if input_weight <= 0:
+        raise ValueError(f"Invalid weight value. "
+                         f"Weight should be a digit greater than 0")
+
+
+def validate_height(input_height):
+    """
+    Validate the user's height to calculate BMI
+    """
+    if not input_height:
+        raise ValueError("Height input cannot be empty")
+    if input_height <= 0:
+        raise ValueError(f"Invalid height value. "
+                         f"Height should be a digit greater than 0")
 
 
 def user_input():
@@ -68,10 +93,10 @@ def user_input():
             validate_gender(gender)
 
             weight = float(input("Please type in your weight in kg:\n"))
-            print(weight)
+            validate_weight(weight)
 
             height = float(input("Please type in your height in cm:\n"))
-            print(height)
+            validate_height(height)
 
             dob = input("Enter your date of birth in format dd/mm/yyyy:\n")
             print(dob)
