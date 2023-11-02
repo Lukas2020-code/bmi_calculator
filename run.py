@@ -57,8 +57,6 @@ def validate_weight(input_weight):
     """
     Validate the user's weight to calculate BMI
     """
-    if not input_weight:
-        raise ValueError("Weight input cannot be empty")
     if input_weight <= 0:
         raise ValueError(f"Invalid weight value. "
                          f"Weight should be a digit greater than 0")
@@ -68,8 +66,6 @@ def validate_height(input_height):
     """
     Validate the user's height to calculate BMI
     """
-    if not input_height:
-        raise ValueError("Height input cannot be empty")
     if input_height <= 0:
         raise ValueError(f"Invalid height value. "
                          f"Height should be a digit greater than 0")
