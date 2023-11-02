@@ -75,6 +75,16 @@ def validate_height(input_height):
                          f"Height should be a digit greater than 0")
 
 
+# references https://www.geeksforgeeks.org/python-validate-string-date-format/
+def validate_dob(input_dob):
+    if not input_dob:
+        raise ValueError("Date of birth cannot be empty.")
+    date_format = r'^\d{2}/\d{2}/\d{4}$'
+    if not re.match(date_format, input_dob):
+        raise ValueError(f"Invalid date format! "
+                         f"Please provide date in format dd/mm/yyyy.")
+
+
 def user_input():
     """
     Get user inputs
@@ -99,7 +109,7 @@ def user_input():
             validate_height(height)
 
             dob = input("Enter your date of birth in format dd/mm/yyyy:\n")
-            print(dob)
+            validate_dob(dob)
 
             break
 
