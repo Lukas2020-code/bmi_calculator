@@ -131,7 +131,6 @@ def calculate_user_age(dob):
     age = current_date.year - dob_date.year
     # check if day or month passed the date of birth
     if current_date.month < dob_date.month or (current_date.month == dob_date.month and current_date.day < dob_date.day):
-
         age += 1
 
     return age
@@ -149,6 +148,34 @@ def bmi_calculator(user_weight, user_height):
     rounded_result = round(result, 2)
 
     return rounded_result
+
+
+def bmi_result(result, email):
+    """
+    That function will display the result of user's BMI calculation
+    and tell the user in which range he/she is. It will also send an email
+    with some tips and advice if BMI is not in normal range.
+    """
+    if result < 18.5:
+        print(f'Your bmi result is: {result}')
+        print(f'It looks like your are in underweight range. '
+              f'On email address {email} we send you some tips and advise '
+              f'to improve your BMI.')
+    elif 18.5 < result < 24.9:
+        print(f'Your bmi result is: {result}')
+        print(f'Your Healthy. You have nothing to worry about. '
+              f'Keep up good work!')
+    elif 29.9 < result < 25.0:
+        print(f'Your bmi result is: {result}')
+        print(f'It looks like your are in overweight range. '
+              f'On email address {email} we send you some tips and advise '
+              f'to improve your BMI.')
+    else:
+        print(f'Your bmi result is: {result}')
+        print(
+            f'It looks like your are in obese range. '
+            f'On email address {email} we send you some tips and advise '
+            f'to improve your BMI.')
 
 
 user_input()
