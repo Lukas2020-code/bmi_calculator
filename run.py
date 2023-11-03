@@ -126,9 +126,9 @@ def calculate_user_age(dob):
     """
     user_date = dob.split("/")
 
-    day = user_date[0]
-    month = user_date[1]
-    year = user_date[2]
+    day = int(user_date[0])
+    month = int(user_date[1])
+    year = int(user_date[2])
 
     today = datetime.now()
 
