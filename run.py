@@ -1,6 +1,7 @@
 import re
 from email_validator import validate_email, EmailNotValidError
 from datetime import datetime
+from PIL import Image
 
 
 def has_numbers(name):
@@ -178,6 +179,20 @@ def bmi_result(result, email):
             f'to improve your BMI.')
 
 
+# references: 
+# https://www.geeksforgeeks.org/display-images-on-terminal-using-python/
+def upload_image():
+    """
+    This function will load and display the BMI table for the user's.
+    It should help them visualize where they are with their BMI calculations.
+    I used outside library to achive the image to load
+    """
+    # create an AnsiImage instance from an image file
+    image = Image.open("assets/images/bmi_table.png")
+    # display the image in console
+    image.show()         
+
+
 def main():
     """
     Main function will run whole programm. It will take user input, 
@@ -211,8 +226,10 @@ def main():
         bmi = bmi_calculator(weight, height)
         # display the user bmi result
         bmi_result(bmi, email)
-        print("You can compare your result on the BMI chart which open in new window")
-   
+        print(f'You can compare your result on the BMI chart '
+              f'which open in new window')
+        # display the bmi table image
+        upload_image() 
 
     print("\nThank you for using BMI calculator. All the best!!!")
 
