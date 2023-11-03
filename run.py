@@ -1,5 +1,6 @@
 import re
 from email_validator import validate_email, EmailNotValidError
+from datetime import datetime
 
 
 def has_numbers(name):
@@ -115,6 +116,25 @@ def user_input():
                   f'\nTry again...\n')
 
     return name, email, gender, weight, height, dob
+
+
+# function to calculate user age
+def calculate_user_age(dob):
+    """
+    This function calculate user's age
+    """
+    # Change the dob string into date object
+    dob_date = datetime.strptime(dob, "%d/%m/%Y")
+    # Take the current time
+    current_date = datetime.now()
+    # calculate the age
+    age = current_date.year - dob_date.year
+    # check if day or month passed the date of birth
+    if current_date.month < dob_date.month or (current_date.month == dob_date.month and current_date.day < dob_date.day):
+
+        age += 1
+
+    return age
 
 
 user_input()
