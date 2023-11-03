@@ -6,7 +6,7 @@ from PIL import Image
 
 def has_numbers(name):
     """
-    Check if user's name contains any digit
+    method to check if user's name contains any digit
     """
     # for char in name:
     #     if char.isdigit():
@@ -28,7 +28,7 @@ def validate_name(input_name):
 # https: // www.w3schools.com / python / python_regex.asp
 # https://docs.python.org/3/library/re.html
     if not re.match(r"^[A-Za-z\s]+$", input_name) and input_name.strip():
-        raise ValueError("Invalid name format. Please use e.g.: Joe Doe")
+        raise ValueError("Invalid name format. Please type e.g.: Joe Doe")
     if has_numbers(input_name):
         raise ValueError("Please don't write numbers in your name!")
 
@@ -85,7 +85,7 @@ def validate_dob(input_dob):
 
 def user_input():
     """
-    Get user inputs
+    Get user's inputs for our program
     """
     print("\nPlease provide some information which helps calculate your BMI")
 
@@ -124,17 +124,17 @@ def calculate_user_age(dob):
     """
     This function calculate user's age
     """
-    # Change the dob string into date object
-    dob_date = datetime.strptime(dob, "%d/%m/%Y")
-    # Take the current time
-    current_date = datetime.now()
-    # calculate the age
-    age = current_date.year - dob_date.year
-    # check if day or month passed the date of birth
-    if current_date.month < dob_date.month or (current_date.month == dob_date.month and current_date.day < dob_date.day):
-        age += 1
+    user_date = dob.split("/")
 
-    return age
+    day = user_date[0]
+    month = user_date[1]
+    year = user_date[2]
+
+    today = datetime.now()
+
+    user_age = today.year - year - ((today.month, today.day) < (month, day))
+
+    return user_age
 
 
 def bmi_calculator(user_weight, user_height):
@@ -179,7 +179,7 @@ def bmi_result(result, email):
             f'to improve your BMI.')
 
 
-# references: 
+# references:
 # https://www.geeksforgeeks.org/display-images-on-terminal-using-python/
 def upload_image():
     """
@@ -190,12 +190,12 @@ def upload_image():
     # create an AnsiImage instance from an image file
     image = Image.open("assets/images/bmi_table.png")
     # display the image in console
-    image.show()         
+    image.show()
 
 
 def main():
     """
-    Main function will run whole programm. It will take user input, 
+    Main function will run whole programm. It will take user input,
     then calculate BMI, show result to the user and exit the program.
     """
     print("\nWelcome to BMI Calculator")
@@ -229,9 +229,9 @@ def main():
         print(f'You can compare your result on the BMI chart '
               f'which open in new window')
         # display the bmi table image
-        upload_image() 
+        upload_image()
 
     print("\nThank you for using BMI calculator. All the best!!!")
 
 
-main()    
+main()
