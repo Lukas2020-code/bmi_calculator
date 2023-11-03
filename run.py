@@ -137,4 +137,18 @@ def calculate_user_age(dob):
     return age
 
 
+def bmi_calculator(user_weight, user_height):
+    """
+    This function calculates the user's BMI
+    """
+    # converts the height from cm into metres
+    height = user_height / 100
+    # calculate the bmi for metric units
+    result = user_weight / (height * height)
+    # round the result to two decimal places
+    rounded_result = round(result, 2)
+
+    return rounded_result
+
+
 user_input()
