@@ -178,4 +178,43 @@ def bmi_result(result, email):
             f'to improve your BMI.')
 
 
-user_input()
+def main():
+    """
+    Main function will run whole programm. It will take user input, 
+    then calculate BMI, show result to the user and exit the program.
+    """
+    print("\nWelcome to BMI Calculator")
+    print(f'\nIt will help you calculate your BMI '
+          f'and compare your result with the graph')
+    # unpack each user input into variable
+    name, email, gender, weight, height, dob = user_input()
+
+    # checking the user input for gender
+    if gender == 'F':
+        gender_str = 'Female'
+    elif gender == 'M':
+        gender_str = 'Male'
+
+    # calculate the user age
+    age = calculate_user_age(dob)
+
+    # checking age cause BMI should not be done for people under 2 years
+    if age <= 2:
+        print("Sorry you are to young for BMI test calculation. Good Bye!")
+        return
+
+    print(f'\nYour name is: {name}')
+    print(f'You are a {gender_str} and your age is {age}')
+
+    if age > 2:
+        # calculate the user bmi
+        bmi = bmi_calculator(weight, height)
+        # display the user bmi result
+        bmi_result(bmi, email)
+        print("You can compare your result on the BMI chart which open in new window")
+   
+
+    print("\nThank you for using BMI calculator. All the best!!!")
+
+
+main()    
