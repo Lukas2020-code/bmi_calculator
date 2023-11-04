@@ -222,8 +222,8 @@ def main():
     updating users worksheet and exit the program.
     """
     print("Welcome to BMI Calculator\n")
-    print(f'It will help you calculate your BMI '
-          f'and compare your result with the graph\n')
+    print(f'It will help calculate your BMI')
+
     # unpack each user input into variable
     name, email, gender, weight, height, dob = user_input()
 

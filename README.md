@@ -1,19 +1,21 @@
 # BMI Calculator
 
-Welcome to BMI Calculator. Simple program which help you check your BMI. Program will ask you for some information and then calculate your BMI.
+Welcome to BMI Calculator. Simple program which help you check your BMI. Program will ask for some information about you and then calculate your BMI.
 
 The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a851f64fcf.herokuapp.com/)
 
+![Site Mockup](docs/readme-images/am-i-responsive.png)
 
 ## How to use it
-- The program will asked question which user should answer for BMI calculation at the beginning
+- The program will asked questions of some information about user 
 - After each question if the answer will not be valid, user get information on the screen
 - When all the information provided by user will be valid the program will calculate the BMI
 - The result will be displayed on the screen for the user with a short message
 
 ## Site owner goal
-- Provide a user with simple BMI calculator
-- 
+- Provide user with simple BMI calculator
+- Give user feedback about result
+
 ## Features
 
 ### Existing Features
@@ -31,7 +33,10 @@ The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a
    - Updating the API
     - Store the user information in Google Sheets
 
- ### Features to Improve
+ ### Future Features
+- The programm could store the date when user's took the BMI calculator so they can reffer back abd check it
+- All the infromation could be transfer from wordsheet to a database
+- Site owner could create a report about how many people take it the calculation of BMI
 
 ## Data Model
 First the program collect the inforation from the user if all of thenm will get through the vakidation process
