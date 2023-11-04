@@ -34,6 +34,8 @@ def has_numbers(name):
 def validate_name(input_name):
     """
     Validate user's name using regex and has_number method
+    This method should tell if user name have only letters,
+    is not empty, match the given pattern and is longer than 2 chars.
     """
     if not input_name:
         raise ValueError("Name cannot be empty!")
@@ -51,7 +53,7 @@ def validate_name(input_name):
 def valid_email(input_email):
     """
     Validate user's email address
-    using email_validator external library
+    using email_validator external library.
     """
     if not input_email:
         raise ValueError("Email Address input cannot be empty.")
@@ -100,11 +102,14 @@ def validate_dob(input_dob):
 
 def user_input():
     """
-    Get user's inputs for our program
+    Get user's inputs for our program.
+    User provide some information until all will be valid.
+    Then the program will move on.
     """
-    print("\nPlease provide some information which helps calculate your BMI")
+    # print("\nPlease provide some information which helps calculate your BMI")
 
     while True:
+        print("\nPlease provide some information to calculate your BMI")
         try:
             name = input("Please type your name:\n")
             validate_name(name)
@@ -206,6 +211,16 @@ def upload_image():
     image = Image.open("assets/images/bmi_table.png")
     # display the image in console
     image.show()
+
+
+def update_users_worksheet(new_data):
+    """
+    Update users worksheet, add new row with the data
+    """
+    print("Updating users worksheet. Please wait...")
+    users_worksheet = SHEET.worksheet('users')
+    users_worksheet.append_row(new_data)
+    print("User data updated successfully.")    
 
 
 def main():
