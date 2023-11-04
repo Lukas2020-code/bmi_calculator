@@ -1,7 +1,6 @@
 import re
 from email_validator import validate_email, EmailNotValidError
 from datetime import datetime
-from PIL import Image
 import gspread
 from google.oauth2.service_account import Credentials
 

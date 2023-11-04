@@ -13,12 +13,12 @@ The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a
 
 ## Site owner goal
 - Provide a user with simple BMI calculator
+- 
+
+## Testing
+The project was tested manually by me, my familly and closes friends.
+It also passed the PEP8 validation
 
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
 
 Happy coding!
