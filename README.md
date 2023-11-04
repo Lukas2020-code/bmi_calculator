@@ -1,27 +1,19 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BMI Calculator
 
-Welcome,
+Welcome to BMI Calculator. Simple program which help you check your BMI. Program will ask you for some information and then calculate your BMI.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a851f64fcf.herokuapp.com/)
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## How to use it
+- Answer on the questions when program ask
+- After each question if the answer will not be valid, user get information on the screen
+- When all the information provided by user will be valid the program will calculate the BMI
+- Th e result will be displayed on the screen for the user
 
-## Creating the Heroku app
+## Site owner goal
+- Provide a user with simple BMI calculator
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
 
 ## Constraints
 

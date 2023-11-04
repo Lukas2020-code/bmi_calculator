@@ -206,7 +206,7 @@ def update_users_worksheet(new_data):
     Update users worksheet, add new row with the data
     """
     print(f'Your information will be store in our worksheet'
-          f'if you would like to check them in the future.\n')
+          f'if you would like to check them.\n')
     print("Updating users worksheet. Please wait...\n")
     # choose users worksheet to store the data
     users_worksheet = SHEET.worksheet('users')
