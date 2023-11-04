@@ -4,7 +4,7 @@ Welcome to BMI Calculator. Simple program which help you check your BMI. Program
 
 The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a851f64fcf.herokuapp.com/)
 
-![Site Mockup](docs/readme-images/am-i-responsive.png)
+![BMI calculator Am I Responsive Image](docs/readme_images/am-i-responsive.png)
 
 ## How to use it
 - The program will asked questions of some information about user 
