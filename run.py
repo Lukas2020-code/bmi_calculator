@@ -110,7 +110,7 @@ def user_input():
     # print("\nPlease provide some information which helps calculate your BMI")
 
     while True:
-        print("\nPlease provide some information to calculate your BMI")
+        print("Please provide some information to calculate your BMI")
         try:
             name = input("Please type your name:\n")
             validate_name(name)
@@ -133,9 +133,9 @@ def user_input():
             break
 
         except ValueError as e:
-            print(f'Oops, something wnet wrong! '
-                  f'\nValidation error: {e}. '
-                  f'\nTry again...\n')
+            print(f'Oops, something wnet wrong!\n'
+                  f'Validation error: {e}.\n'
+                  f'Try again...\n')
 
     return name, email, gender, weight, height, dob
 
@@ -181,25 +181,24 @@ def bmi_result(result, email):
     with some tips and advice if BMI is not in normal range.
     """
     if result < 18.5:
-        print(f'Your bmi result is: {result}')
+        print(f'\nYour bmi result is: {result}')
         print(f'It looks like your are in underweight range. '
               f'On email address {email} we send you some tips and advise '
               f'to improve your BMI.')
     elif 18.5 < result < 24.9:
-        print(f'Your bmi result is: {result}')
+        print(f'\nYour bmi result is: {result}')
         print(f'Your Healthy. You have nothing to worry about. '
               f'Keep up good work!')
     elif 29.9 < result < 25.0:
-        print(f'Your bmi result is: {result}')
+        print(f'\nYour bmi result is: {result}')
         print(f'It looks like your are in overweight range. '
               f'On email address {email} we send you some tips and advise '
               f'to improve your BMI.')
     else:
-        print(f'Your bmi result is: {result}')
-        print(
-            f'It looks like your are in obese range. '
-            f'On email address {email} we send you some tips and advise '
-            f'to improve your BMI.')
+        print(f'\nYour bmi result is: {result}')
+        print(f'It looks like your are in obese range. '
+              f'On email address {email} we send you some tips and advise '
+              f'to improve your BMI.')
 
 
 # references:
@@ -220,13 +219,15 @@ def update_users_worksheet(new_data):
     """
     Update users worksheet, add new row with the data
     """
-    print("Updating users worksheet. Please wait...")
+    print(f'Your information will be store in our database '
+          f'if you would like to check them in the future.\n')
+    print("Updating users worksheet. Please wait...\n")
     # choose users worksheet to store the data
     users_worksheet = SHEET.worksheet('users')
     # updating the worksheet with user data
     users_worksheet.append_row(new_data)
 
-    print("User data updated successfully.")
+    print("User data updated successfully.\n")
 
 
 def main():
@@ -235,9 +236,9 @@ def main():
     then calculate BMI, show result to the user with short informatio,
     updating users worksheet and exit the program.
     """
-    print("\nWelcome to BMI Calculator")
-    print(f'\nIt will help you calculate your BMI '
-          f'and compare your result with the graph')
+    print("Welcome to BMI Calculator\n")
+    print(f'It will help you calculate your BMI '
+          f'and compare your result with the graph\n')
     # unpack each user input into variable
     name, email, gender, weight, height, dob = user_input()
 
@@ -249,11 +250,12 @@ def main():
 
     # checking age cause BMI should not be done for people under 2 years
     if age <= 2:
-        print("Sorry you are to young for BMI test calculation. Good Bye!")
+        print("Sorry you are to young for BMI test calculation. Good Bye!\n")
         return
 
-    print(f'\nYour name is: {name}')
-    print(f'You are a {gender_str} and your age is {age}')
+    print(f'\nHello {name}')
+    print(f'We know that you are a {gender_str} '
+          f'and your age is {age}\n')
 
     if age > 2:
         # calculate the user bmi
@@ -261,15 +263,16 @@ def main():
         # display the user bmi result
         bmi_result(bmi, email)
         print(f'You can compare your result on the BMI chart '
-              f'which open in new window')
+              f'which open in new window\n')
         # display the bmi table image
         upload_image()
+
         # collect all the data into list
         user_data = [name, email, gender, weight, height, dob, age, bmi]
         # update the worksheet with user data
         update_users_worksheet(user_data)
 
-    print("\nThank you for using BMI calculator. All the best!!!")
+    print("Thank you for using BMI calculator. All the best!!!")
 
 
 main()
