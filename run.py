@@ -205,7 +205,7 @@ def update_users_worksheet(new_data):
     """
     Update users worksheet, add new row with the data
     """
-    print(f'Your information will be store in our database '
+    print(f'Your information will be store in our worksheet'
           f'if you would like to check them in the future.\n')
     print("Updating users worksheet. Please wait...\n")
     # choose users worksheet to store the data
@@ -248,8 +248,6 @@ def main():
         bmi = bmi_calculator(weight, height)
         # display the user bmi result
         bmi_result(bmi, email)
-        print(f'You can compare your result on the BMI chart '
-              f'which open in new window\n')
         # collect all the data into list
         user_data = [name, email, gender, weight, height, dob, age, bmi]
         # update the worksheet with user data
