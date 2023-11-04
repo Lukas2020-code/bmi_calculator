@@ -63,7 +63,7 @@ def valid_email(input_email):
 
 def validate_gender(input_gender):
     """
-    Validate user's gender
+    Validate user gender
     """
     if not input_gender:
         raise ValueError("Gender input cannot be empty.")
@@ -75,6 +75,7 @@ def validate_gender(input_gender):
 def validate_weight(input_weight):
     """
     Validate the user's weight to calculate BMI
+    Height have to greater than 0 and should be a digit
     """
     if input_weight <= 0:
         raise ValueError(f"Invalid weight value. "
@@ -144,14 +145,16 @@ def calculate_user_age(dob):
     """
     This function calculate user's age
     """
+    # seperate the dob date into single strings
     user_date = dob.split("/")
 
+    # cast those strings into ints
     day = int(user_date[0])
     month = int(user_date[1])
     year = int(user_date[2])
 
     today = datetime.now()
-
+    # calculate user age
     user_age = today.year - year - ((today.month, today.day) < (month, day))
 
     return user_age
@@ -218,15 +221,19 @@ def update_users_worksheet(new_data):
     Update users worksheet, add new row with the data
     """
     print("Updating users worksheet. Please wait...")
+    # choose users worksheet to store the data
     users_worksheet = SHEET.worksheet('users')
+    # updating the worksheet with user data
     users_worksheet.append_row(new_data)
+
     print("User data updated successfully.")    
 
 
 def main():
     """
-    Main function will run whole programm. It will take user input,
-    then calculate BMI, show result to the user and exit the program.
+    Main function run the programm. It will take user input,
+    then calculate BMI, show result to the user with short informatio,
+    updating users worksheet and exit the program.
     """
     print("\nWelcome to BMI Calculator")
     print(f'\nIt will help you calculate your BMI '
@@ -235,10 +242,7 @@ def main():
     name, email, gender, weight, height, dob = user_input()
 
     # checking the user input for gender
-    if gender == 'F':
-        gender_str = 'Female'
-    elif gender == 'M':
-        gender_str = 'Male'
+    gender_str = "Female" if gender == "F" else "Male"
 
     # calculate the user age
     age = calculate_user_age(dob)
@@ -260,6 +264,10 @@ def main():
               f'which open in new window')
         # display the bmi table image
         upload_image()
+        # collect all the data into list
+        user_data = [name, email, gender, weight, height, dob, age, bmi]
+        # update the worksheet with user data
+        update_users_worksheet(user_data)
 
     print("\nThank you for using BMI calculator. All the best!!!")
 
