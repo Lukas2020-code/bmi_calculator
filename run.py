@@ -226,7 +226,7 @@ def update_users_worksheet(new_data):
     # updating the worksheet with user data
     users_worksheet.append_row(new_data)
 
-    print("User data updated successfully.")    
+    print("User data updated successfully.")
 
 
 def main():
