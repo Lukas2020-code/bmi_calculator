@@ -16,6 +16,10 @@ The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a
 - Provide user with simple BMI calculator
 - Give user feedback about result
 
+## Logic Flow
+
+provide diagram
+
 ## Features
 
 ### Existing Features
@@ -24,37 +28,46 @@ The life link can be found here: [bmi-calculator](https://calculate-your-bmi-50a
 
  - Calculate BMI
     - User provide the weight and height
-    - This function calculate user BMI by provided data
+    - This function calculate user BMI by provided user data
 
   - Display result to the user
     - User get a calculated result of BMI
-    - It also get a short message from the program acording to the BMI result
+    - User also get a short message from the program acording to the BMI result
 
    - Updating the API
     - Store the user information in Google Sheets
 
  ### Future Features
-- The programm could store the date when user's took the BMI calculator so they can reffer back abd check it
+- The login and password screen could be created for users and after when they login they will be able to see the last calculation.
+- Time stamp could be also added for the user's so when they come back they could see when was the lst they check their BMI
 - All the infromation could be transfer from wordsheet to a database
-- Site owner could create a report about how many people take it the calculation of BMI
+- Site owner could create a report about how many people take it the calculation of BMI, what's the average user age and etc.
 
 ## Data Model
-First the program collect the inforation from the user if all of thenm will get through the vakidation process
+The program collect the inforation from the user.
+The information have to get through the validation process
 
-Then some of the information are used in other task to complete the program requirements.
+Some of the information are used to complete the program requirements.
+The program requirements are to calculate user BMI and store those data into Google Sheets API.
 
-
+The data model is quite simple. Each action is write in seperate deffinitions that will be easy to manage and maintain if something goes wrong.
 
 ## Testing
-- The project was tested manually by me, my familly and closes friends.
-- Tests for all inputs and check the validation e.g.:
-     - numbers in user name
-     - email without @ sign
-     - used any other number or letter which are not F or M
-     - give a char or string in weight or height
-     - write a date of birth which is not if format dd/mm/yyyy, e.g. used - instead
-- Tested in my terminal on PyCharm, the codeanywhere terminal when writting the project and on Heroku terminal.
-- 
+- The project was tested manually by me, my familly and closes friends on desktop, tablets and phones.
+- It was also tested in PyCharm terminal, the codeanywhere terminal when writting the project and on Heroku terminal.
+
+### Input Testing
+All user inputs were tested and check for validation as follow:
+     - User name input - tested for numbers in user name, if user name is empty, is it at least 2 chars long and is it match the given pattern provided by regex. If any of the condition will be invalid the user will get a message on the screen
+     - Email - for this validation is used outside library called email_validator which check if given email match the pattern in that library and will give user feedback if not
+     - Gender - simple validation to check if the user is Male(M) or Female(F). In any other cases user will get an error
+     - Weight and Height - validation to check if the given input is a number grteater than 0. This is possible because input which user provide is casted to float from string value.
+     - Date of Birth - date validation is check by regex and pattern provided by the site owner. If date won't be in given format dd/mm/yyy the user will get an error on the screen e.g. if user type in '-' between numbers instead of '/'
+
+### Validator Testing
+- PEP8
+    - Passed the PEP8 validation with no errors found on run.py.
+    ![PEP8 Validation Image](docs/readme_images/PEP8_Validation.png)
 
 ### Bugs
 
@@ -62,9 +75,7 @@ Then some of the information are used in other task to complete the program requ
 - When calculating the user age I found out that the first approach which I have doesn't calculate the months and days correctly e.g. when user birthday was the next day of today it was still counted like the user is already a plus year old. It goes by the year, not includind the months and days. The second solution which I found online sole the problem. I credited the source below in Credit section.
 - I decided to use external python library email_validator instead of regex for email validation. It's designed for this purpose and shorter to write than regex expesion which sometimes didn't catch the wrong email.
 
-### Validator Testing
-- PEP8
-    - Passed the PEP8 validation with no errors found.
+
 
 ## Deploy
 The application is deployed on Heroku platform (which is used for backend project) using Code Institute mock terminal.
