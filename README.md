@@ -23,7 +23,7 @@ The life link can be found here: [BMI Calculator](https://calculate-your-bmi-50a
 For better understanding of program flow I provide a flow chart diagram which give the idea of how program works.
 I creat it using draw.io - online free tool for simple flow charts diagrams and more
 
-![Flow Chart Image](dovs/readme_images/flow_chart.png)
+![Flow Chart Image](docs/readme_images/flow_chart.png)
 
 
 ## Features
