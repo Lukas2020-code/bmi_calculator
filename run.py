@@ -22,14 +22,10 @@ def has_numbers(name):
     """
     method to check if user's name contains any digit
     """
-    # for char in name:
-    #     if char.isdigit():
-    #         return True
-    # return False
+
     return any(char.isdigit() for char in name)
 
 
-# create a function to validate user name
 def validate_name(input_name):
     """
     Validate user's name using regex and has_number method
@@ -40,9 +36,6 @@ def validate_name(input_name):
         raise ValueError("Name cannot be empty!")
     if len(input_name) < 2:
         raise ValueError("Name cannot be shorter than two chars")
-# references for re.match in python
-# https: // www.w3schools.com / python / python_regex.asp
-# https://docs.python.org/3/library/re.html
     if not re.match(r"^[A-Za-z\s]+$", input_name) and input_name.strip():
         raise ValueError("Invalid name format. Please type e.g.: Joe Doe")
     if has_numbers(input_name):
@@ -90,7 +83,6 @@ def validate_height(input_height):
                          f"Height should be a digit greater than 0")
 
 
-# references https://www.geeksforgeeks.org/python-validate-string-date-format/
 def validate_dob(input_dob):
     if not input_dob:
         raise ValueError("Date of birth cannot be empty.")
@@ -138,21 +130,19 @@ def user_input():
     return name, email, gender, weight, height, dob
 
 
-# function to calculate user age
 def calculate_user_age(dob):
     """
     This function calculate user's age
     """
-    # seperate the dob date into single strings
+
     user_date = dob.split("/")
 
-    # cast those strings into ints
     day = int(user_date[0])
     month = int(user_date[1])
     year = int(user_date[2])
 
     today = datetime.now()
-    # calculate user age
+
     user_age = today.year - year - ((today.month, today.day) < (month, day))
 
     return user_age
@@ -162,11 +152,11 @@ def bmi_calculator(user_weight, user_height):
     """
     This function calculates the user's BMI
     """
-    # converts the height from cm into metres
+
     height = user_height / 100
-    # calculate the bmi for metric units
+
     result = user_weight / (height * height)
-    # round the result to two decimal places
+
     rounded_result = round(result, 2)
 
     return rounded_result
@@ -206,9 +196,9 @@ def update_users_worksheet(new_data):
     print(f'Your information will be store in our worksheet'
           f'if you would like to check them.\n')
     print("Updating users worksheet. Please wait...\n")
-    # choose users worksheet to store the data
+
     users_worksheet = SHEET.worksheet('users')
-    # updating the worksheet with user data
+
     users_worksheet.append_row(new_data)
 
     print("User data updated successfully.\n")
@@ -223,16 +213,12 @@ def main():
     print("Welcome to BMI Calculator\n")
     print(f'It will help calculate your BMI')
 
-    # unpack each user input into variable
     name, email, gender, weight, height, dob = user_input()
 
-    # checking the user input for gender
     gender_str = "Female" if gender == "F" else "Male"
 
-    # calculate the user age
     age = calculate_user_age(dob)
 
-    # checking age cause BMI should not be done for people under 2 years
     if age <= 2:
         print("Sorry you are to young for BMI test calculation. Good Bye!\n")
         return
@@ -242,13 +228,13 @@ def main():
           f'and your age is {age}\n')
 
     if age > 2:
-        # calculate the user bmi
+
         bmi = bmi_calculator(weight, height)
-        # display the user bmi result
+
         bmi_result(bmi, email)
-        # collect all the data into list
+
         user_data = [name, email, gender, weight, height, dob, age, bmi]
-        # update the worksheet with user data
+
         update_users_worksheet(user_data)
 
     print("Thank you for using BMI calculator. All the best!!!")

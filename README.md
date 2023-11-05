@@ -15,8 +15,8 @@ The life link can be found here: [BMI Calculator](https://calculate-your-bmi-50a
 
 ## Site owner goal
 
-- Provide user with simple BMI calculator
-- Give user feedback about result
+- Provide user's with simple BMI calculator
+- Give user's feedback about result
 
 ## Logic Flow
 
@@ -26,27 +26,27 @@ provide diagram
 
 ### Existing Features
 - Calculate User Age
-    - This function calculate user age and store it in the workseet
+    - This function calculate user age usig datetime library
 
  - Calculate BMI
-    - This function calculate user BMI
-    - User's provide the weight and height through the questions they have to answer
+    - This function calculate user BMI in metric system
+    - User's provide the weight and height through the questions they have to answer at the beggining of the application
    
 
   - Display result to the user
     - User get a calculated result of BMI
     - User also get a short message from the program acording to the BMI result
 
-   - Updating the API
-    - Store the user information in Google Sheets
+   - Save data to the API
+    - Store the user information in Google Sheets API
 
  ### Future Features
 
 - The login and password screen could be created for users and after when they login they will be able to see the last calculations.
-- Time stamp could be also added for the user's so when they come back they could see when was the last time they check their BMI
+- Time stamp could be also added for the user's so they know when was the last time they checked their BMI
 - All the infromation could be transfer from wordsheet to a database
 - Site owner could create a report about how many people take it the calculation of BMI, what's the average user age and etc.
-- The program could create a report for the user's about they historical BMI
+- The program could create a report for the user's about they historical BMI values
 
 ## Data Model
 
@@ -54,23 +54,23 @@ The program collect the inforation from the user.
 The information have to get through the validation process
 
 Some of the information are used to complete the program requirements.
-The program requirements are to calculate user BMI and store those data into Google Sheets API.
+The program requirement is to calculate user BMI and store those data into Google Sheets API.
 
 Each action is writen in seperate deffinitions that will be easy to manage and maintain if something goes wrong.
 
 ## Testing
 
-The project was tested manually by me, my familly and closes friends on desktop, tablets and phones.
-It was also tested in PyCharm terminal, the codeanywhere terminal when writting the project and on Heroku terminal.
+The project was tested manually by myself, my familly and closes friends on desktop, tablets and phones.
+It was also tested in PyCharm terminal, the CodeAnywhere terminal when writting the project and on Heroku when application was deployed.
 
 ### Input Testing
 
 All user inputs were tested and check for validation as follow:
-- User name input - tested for numbers in user name, if user name is empty, is it at least 2 chars long and is it match the given pattern provided by regex. If any of the condition will be invalid the user will get a message on the screen
-- Email - for this validation is used outside library called email_validator which check if given email match the pattern in that library and will give user feedback if not
+- User name input - tested for numbers in user name, if user name is empty, is it at least 2 chars long and is it match the given pattern provided by regex. If any of the condition will be failed the user will get a message on the screen
+- Email - for this validation I used outside library called email_validator which check if given email match the pattern in that library and will give user feedback if not
 - Gender - simple validation to check if the user is Male(M) or Female(F). In any other cases user will get an error
-- Weight and Height - validation to check if the given input is a number grteater than 0. This is possible because input which user provide is casted to float from string value.
-- Date of Birth - date validation is check by regex and pattern provided by the site owner. If date won't be in given format dd/mm/yyy the user will get an error on the screen e.g. if user type in '-' between numbers instead of '/'
+- Weight and Height - validation to check if the given input is a number grteater than 0. This is possible because input which user provide is cast to float from string value.
+- Date of Birth - date validation is check by regex and pattern provided by the site owner. If date won't be in given format dd/mm/yyyy the user will get an error on the screen e.g. if user type in '-' between numbers instead of '/' the rror will shop up on the screen
 
 ### Validator Testing
 
@@ -150,4 +150,4 @@ To achive that the following steps have to be taken:
 ## Acknowledgments
 
 My mentor Antonio Rodriguez for help and ideas about the project
-The slack community on Code Institute chanel, they are always there if you need help.
+The slack community on Code Institute chanel, they are always there if you need any help.
