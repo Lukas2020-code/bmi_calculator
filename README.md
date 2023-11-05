@@ -4,7 +4,7 @@ Welcome to BMI Calculator. Simple program which help you check your BMI. Program
 
 The life link can be found here: [BMI Calculator](https://calculate-your-bmi-50a851f64fcf.herokuapp.com/)
 
-![BMI Calculator - Am I Responsive Image](docs/readme_images/am-i-responsive.png)
+![BMI Calculator - Am I Responsive Image](docs/readme_images/am_i_responsive.png)
 
 ## How to use it
 
@@ -27,18 +27,21 @@ provide diagram
 ### Existing Features
 - Calculate User Age
     - This function calculate user age usig datetime library
+    [user age calculation](docs/readme_images/...)
 
  - Calculate BMI
     - This function calculate user BMI in metric system
     - User's provide the weight and height through the questions they have to answer at the beggining of the application
-   
+    [calculate user bmi](docs/readme_images/...)
 
   - Display result to the user
     - User get a calculated result of BMI
     - User also get a short message from the program acording to the BMI result
+    [calculate user bmi](docs/readme_images/...)
 
    - Save data to the API
     - Store the user information in Google Sheets API
+    [calculate user bmi](docs/readme_images/...)
 
  ### Future Features
 
