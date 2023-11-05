@@ -23,7 +23,7 @@ The life link can be found here: [BMI Calculator](https://calculate-your-bmi-50a
 For better understanding of program flow I provide a flow chart diagram which give the idea of how program works.
 I creat it using draw.io - online free tool for simple flow charts diagrams and more
 
-![Flow Chart](dovs/readme_images/flow_chart.png)
+![Flow Chart Image](dovs/readme_images/flow_chart.png)
 
 
 ## Features
@@ -32,24 +32,24 @@ I creat it using draw.io - online free tool for simple flow charts diagrams and 
 - Calculate User Age
     - This function calculate user age usig datetime library
 
-    ![user age calculation](docs/readme_images/calculate_user_age.png)
+    ![User Age Calculation](docs/readme_images/calculate_user_age.png)
 
  - Calculate BMI
     - This function calculate user BMI in metric system
     - User's provide the weight and height through the questions they have to answer at the beggining of the application
 
-   ![calculate user bmi](docs/readme_images/calculate_bmi.png)
+   ![Calculate user BMI](docs/readme_images/calculate_bmi.png)
 
   - Display result to the user
     - User get a calculated result of BMI
     - User also get a short message from the program acording to the BMI result
 
-    ![calculate user bmi](docs/readme_images/display_result.png)
+    ![Display User BMI](docs/readme_images/display_result.png)
 
    - Save data to the API
     - Store the user information in Google Sheets API
 
-    ![calculate user bmi](docs/readme_images/update_API.png)
+    ![Update Google API](docs/readme_images/update_API.png)
 
  ### Future Features
 
@@ -87,7 +87,7 @@ All user inputs were tested and check for validation as follow:
 
 - PEP8
     - Passed the PEP8 validation with no errors found on run.py.
-    
+
     ![PEP8 Validation Image](docs/readme_images/PEP8_Validation.png)
 
 
@@ -95,7 +95,7 @@ All user inputs were tested and check for validation as follow:
 
 No bugs founded
 
-#### Solved Bugs
+### Solved Bugs
 
 - When calculating the user age I found out that the first approach which I have doesn't calculate the months and days correctly e.g. when user birthday was the next day of today it was still counted like the user is already a plus year old. It goes by the year, not including the months and days. The second solution which I found online sole the problem. I credited the source below in Credit section.
 - I decided to use external python library email_validator instead of regex for email validation. It's designed for this purpose and shorter to write than regex expesion which sometimes didn't catch the wrong email.
@@ -111,16 +111,16 @@ To achive that the following steps have to be taken:
  - In Codeanywhere create a new workspace
  - Write the application logic
  - Push changes to github
- - Test the application in terminal for bugs and error
+ - Test the application in terminal for bugs and errors
  - Use the command pip3 freeze > requirements.txt in terminal to store all the requirements of application into file (this is needed so the heroku know what requirements have to load it while deploy the apllication)
  - Create or log in to Heroku account
  - In Heroku dashboard click "Create -> Create New App"
  - Follow the steps to create your app (add unique name, choose the region)
  - Next click on Setting tab and scroll down to Config Vars
  - Click "Reveal Config Vars" and Enter first Config Var KEY: PORT, and the VALUE: 8000, then press "Add"
- - Then in The KEY type CREDS and for Value copy and paste the content of the creds.json file from the project if you create it
- - Next scroll down to the Buildpack section and click "Add Buildpack", select python, click "Add", then nodejs and click "Add"
- - Make sure that python is abowe node.js, if not drag and drop burger menu on the left hand side and move them in correct order
+ - Then in The second KEY type CREDS and for VALUE copy and paste the content of the creds.json file from the project if you create it
+ - Next scroll down to the Buildpack section and click "Add Buildpack", select python, click "Add", then select nodejs and click "Add"
+ - Make sure that python is abowe node.js, if not click and hold the burger menu on the left hand side of the python/node.js and move them in correct order
  - Move to the top of the page and click Deploy tab
  - Select GitHub as a deployment method
  - Confirm that you want to connect with GitHub
