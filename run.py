@@ -86,6 +86,7 @@ def validate_height(input_height):
 def validate_dob(input_dob):
     if not input_dob:
         raise ValueError("Date of birth cannot be empty.")
+# references: https://www.geeksforgeeks.org/python-validate-string-date-format/  
     date_format = r'^\d{2}/\d{2}/\d{4}$'
     if not re.match(date_format, input_dob):
         raise ValueError(f"Invalid date format! "
@@ -142,7 +143,7 @@ def calculate_user_age(dob):
     year = int(user_date[2])
 
     today = datetime.now()
-
+# references: https://www.codingem.com/how-to-calculate-age-in-python/
     user_age = today.year - year - ((today.month, today.day) < (month, day))
 
     return user_age
@@ -154,7 +155,7 @@ def bmi_calculator(user_weight, user_height):
     """
 
     height = user_height / 100
-
+# references: https://rb.gy/wa7x3c
     result = user_weight / (height * height)
 
     rounded_result = round(result, 2)

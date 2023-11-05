@@ -154,8 +154,8 @@ To achive that the following steps have to be taken:
 - [Stack Overflow](https://stackoverflow.com/)
 - [W3Schools - Python RegEx](https://www.w3schools.com/python/python_regex.asp) - used to learn about RegEx
 - [Python Docs - regular expression](https://docs.python.org/3/library/re.html) - used to learn about RegEx and used it in name validation
-- [Python validate string date format - GeeksForGeek](https://www.geeksforgeeks.org/python-validate-string-date-format/) - used this article to learn about date validation in python
-- [How to calculate age in Python - codingem.com](https://www.codingem.com/how-to-calculate-age-in-python/) - used this article to learn how to calculate the age in python 
+- [Python validate string date format - GeeksForGeek](https://www.geeksforgeeks.org/python-validate-string-date-format/) - used this article to learn about date validation in python and use it to validate the date of birth
+- [How to calculate age in Python - codingem.com](https://www.codingem.com/how-to-calculate-age-in-python/) - used this article to learn how to calculate the age in python and use the code for calculation
 - [Draw.io](https://app.diagrams.net/) - used this tool to create a flow chart diagram for application
 - [Am-I-Responsive](https://ui.dev/amiresponsive) - check program on different screen devices
 - I followed the steps in the Code Institute Python walkthrough project - Love Sandwiches - when setting up my Google Sheets API.
