@@ -20,28 +20,32 @@ The life link can be found here: [BMI Calculator](https://calculate-your-bmi-50a
 
 ## Logic Flow
 
-provide diagram
+For better understanding of program flow I provide a flow chart diagram which give the idea of how program works.
+I creat it using draw.io - online free tool for simple flow charts diagrams and more
+
+[Flow Chart](dovs/readme_images/flow_chart.png)
+
 
 ## Features
 
 ### Existing Features
 - Calculate User Age
     - This function calculate user age usig datetime library
-    [user age calculation](docs/readme_images/...)
+    [user age calculation](docs/readme_images/calculate_user_age.png)
 
  - Calculate BMI
     - This function calculate user BMI in metric system
     - User's provide the weight and height through the questions they have to answer at the beggining of the application
-    [calculate user bmi](docs/readme_images/...)
+    [calculate user bmi](docs/readme_images/calculate_bmi.png)
 
   - Display result to the user
     - User get a calculated result of BMI
     - User also get a short message from the program acording to the BMI result
-    [calculate user bmi](docs/readme_images/...)
+    [calculate user bmi](docs/readme_images/display_result.png)
 
    - Save data to the API
     - Store the user information in Google Sheets API
-    [calculate user bmi](docs/readme_images/...)
+    [calculate user bmi](docs/readme_images/update_API.png)
 
  ### Future Features
 
