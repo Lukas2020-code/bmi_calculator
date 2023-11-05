@@ -106,7 +106,6 @@ def user_input():
     User provide some information until all will be valid.
     Then the program will move on.
     """
-    # print("\nPlease provide some information which helps calculate your BMI")
 
     while True:
         print("Please provide some information to calculate your BMI")

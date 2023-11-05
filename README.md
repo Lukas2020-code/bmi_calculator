@@ -72,17 +72,48 @@ All user inputs were tested and check for validation as follow:
 ### Bugs
 
 #### Solved Bugs
-- When calculating the user age I found out that the first approach which I have doesn't calculate the months and days correctly e.g. when user birthday was the next day of today it was still counted like the user is already a plus year old. It goes by the year, not includind the months and days. The second solution which I found online sole the problem. I credited the source below in Credit section.
+
+- When calculating the user age I found out that the first approach which I have doesn't calculate the months and days correctly e.g. when user birthday was the next day of today it was still counted like the user is already a plus year old. It goes by the year, not including the months and days. The second solution which I found online sole the problem. I credited the source below in Credit section.
 - I decided to use external python library email_validator instead of regex for email validation. It's designed for this purpose and shorter to write than regex expesion which sometimes didn't catch the wrong email.
 
 
 
 ## Deploy
+
 The application is deployed on Heroku platform (which is used for backend project) using Code Institute mock terminal.
 To achive that the following steps have to be taken
  - Copy the repository
  - Create a Heroku Application
 
+## Library and technology used
+
+### Python Libraries
+
+- re - re.match() is used to check the user name and user date of birth match the given pattern
+- email_validator - check if email address have correct syntax and handle the error if not
+- datetime - datetime.now() get todays date for calculation of user age
+- gspread - help communicate with google sheets
+
+### Program Used
+
+- GitHub - version control
+- Heroku - deploy the live project
+- Codeanywhere - build up the application
+- PyCharm - for testing
 
 ## Credits
-all the credit in the application goes here
+
+### Resources Used
+
+- [Stack Overflow - Python RegEx](https://stackoverflow.com/)
+- [W3Schools](https://www.w3schools.com/python/python_regex.asp) - used to learn about RegEx
+- [Python Docs - regular expression](https://docs.python.org/3/library/re.html) - used to learn about RegEx and used it in name validation
+- [GeeksForGeek](https://www.geeksforgeeks.org/python-validate-string-date-format/) - used this article to learn about date validation in python
+- [How to calculate age in Python - codingem.com](https://www.codingem.com/how-to-calculate-age-in-python/) - used this article to learn how to calculate the age in python 
+- [Am-I-Responsive](https://ui.dev/amiresponsive) - check my progrtam on different devices
+- I followed the steps in the Code Institute Python walkthrough project - Love Sandwiches when setting up my Google Sheets API.
+
+## Acknowledgments
+
+My mentor Antonio Rodriguez for help and ideas about the project
+The slack community on Code Institute chanel, they are always there if you need help.
